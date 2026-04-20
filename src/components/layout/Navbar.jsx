@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Pill, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import logo from '../../assets/CarePack_Pharmacy_Logo.svg';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -45,7 +47,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-20 md:h-20">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center group">
-                            <img src="/src/assets/CarePack_Pharmacy_Logo.svg" alt="Carepack Pharmacy" className="h-7 sm:h-7 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+                            <img src={logo} alt="Carepack Pharmacy" className="h-7 sm:h-7 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
                         </Link>
                     </div>
 

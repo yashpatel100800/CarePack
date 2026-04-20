@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Pill, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Printer } from 'lucide-react';
 
+import logo from '../../assets/CarePack_Pharmacy_Logo.svg';
+
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -11,7 +13,7 @@ const Footer = () => {
                     <div>
                         <div className="flex items-center mb-8">
                             <div className="bg-white p-4 rounded-2xl inline-block shadow-lg">
-                                <img src="/src/assets/logo.png" alt="Carepack Pharmacy" className="h-16 md:h-20 w-auto object-contain" />
+                                <img src={logo} alt="Carepack Pharmacy" className="h-16 md:h-20 w-auto object-contain" />
                             </div>
                         </div>
                         <p className="text-gray-100 font-medium mb-6 leading-relaxed">
