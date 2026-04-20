@@ -26,19 +26,36 @@ const RefillForm = () => {
             return;
         }
         
-        // Construct WhatsApp Message
-        const message = `*New Refill Request*%0A` +
-            `*Name:* ${data.firstName} ${data.lastName}%0A` +
-            `*Phone:* ${data.phone}%0A` +
-            `*Rx Numbers:* ${filteredRx.join(', ')}`;
+        const payload = {
+            formType: "Refill Request",
+            firstName: data.firstName,
+            lastName: data.lastName,
+            phone: data.phone,
+            rxNumbers: filteredRx.join(', ')
+        };
 
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-        window.open(whatsappUrl, '_blank');
+        try {
+            const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL;
+            if (webhookUrl && webhookUrl !== "https://hook.us1.make.com/your-webhook-url-here") {
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+            } else {
+                console.warn("Make.com Webhook URL is not configured. Form data:", payload);
+                // Simulate network delay for UI feedback if webhook isn't setup yet
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
 
-        setIsSuccess(true);
-        reset();
-        setRxFields(['', '', '', '']);
-        setTimeout(() => setIsSuccess(false), 3000);
+            setIsSuccess(true);
+            reset();
+            setRxFields(['', '', '', '']);
+            setTimeout(() => setIsSuccess(false), 3000);
+        } catch (error) {
+            console.error("Error submitting refill form:", error);
+            alert("There was an error submitting your request. Please try again.");
+        }
     };
 
     return (

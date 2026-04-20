@@ -28,12 +28,12 @@ const Navbar = () => {
     }, [location]);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Compounding Services', path: '/services' },
-        { name: 'Prescribers', path: '/prescribers' },
-        { name: 'Patients', path: '/patients' },
-        { name: 'About Us', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        // { name: 'Home', path: '/' },
+        // { name: 'Compounding Services', path: '/services' },
+        // { name: 'Prescribers', path: '/prescribers' },
+        // { name: 'Patients', path: '/patients' },
+        // { name: 'About Us', path: '/about' },
+        // { name: 'Contact', path: '/contact' },
     ];
 
     return (

@@ -51,7 +51,7 @@ const Contact = () => {
                                         <MapPin className="h-6 w-6 text-primary" />
                                     </div>
                                     <div className="ml-3 text-base text-gray-500">
-                                        <p>1039 Harley Strickland Blvd #700</p>
+                                        <p>1039 Harley Strickland Blvd&nbsp;#700</p>
                                         <p className="mt-1">Orange City, FL 32763</p>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Pill, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Pill, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Printer } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -80,28 +80,33 @@ const Footer = () => {
                                     href="https://www.google.com/maps/search/?api=1&query=Carepack+Pharmacy+1039+Harley+Strickland+Blvd+Orange+City+FL"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-100 hover:text-white font-medium"
+                                    className="text-gray-100 hover:text-white font-medium text-sm"
                                 >
-                                    1039 Harley Strickland Blvd #700<br />
+                                    1039 Harley Strickland Blvd&nbsp;#700<br />
                                     Orange City, FL 32763
                                 </a>
                             </li>
                             <li className="flex items-center">
                                 <Phone className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                                <div className="text-gray-100 font-medium">
+                                <div className="text-gray-100 font-medium text-sm">
                                     <a href="tel:+13865320220" className="hover:text-white block">(386) 532-0220</a>
-                                    <span className="text-sm text-gray-400">Fax: (386) 532-0283</span>
+                                </div>
+                            </li>
+                            <li className="flex items-center">
+                                <Printer className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                                <div className="text-gray-100 font-medium text-sm">
+                                    <span className="block">Fax: (386) 532-0283</span>
                                 </div>
                             </li>
                             <li className="flex items-start">
                                 <Mail className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                                <a href="mailto:info@carepackrx.com" className="text-gray-100 font-medium hover:text-white break-all">
+                                <a href="mailto:info@carepackrx.com" className="text-gray-100 font-medium hover:text-white break-all text-sm">
                                     info@carepackrx.com
                                 </a>
                             </li>
                             <li className="flex items-start">
                                 <Clock className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-100 font-medium">
+                                <span className="text-gray-100 font-medium text-sm">
                                     Mon-Fri: 9:00 AM - 5:00 PM<br />
                                     Sat-Sun: Closed
                                 </span>

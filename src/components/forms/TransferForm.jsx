@@ -11,22 +11,39 @@ const TransferForm = () => {
     const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || "14076441025"; 
 
     const onSubmit = async (data) => {
-        // Construct WhatsApp message
-        const message = `*New Transfer Request*%0A` +
-            `*For:* ${data.transferType}%0A` +
-            `*Name:* ${data.firstName} ${data.lastName}%0A` +
-            `*Phone:* ${data.phone}%0A` +
-            `*Email:* ${data.email}%0A` +
-            `*Old Pharmacy:* ${data.pharmacyName} (${data.pharmacyPhone})%0A` +
-            `*Zip Code:* ${data.zipCode}%0A` +
-            `*Rx Number:* ${data.rxNumber}`;
+        const payload = {
+            formType: "Transfer Request",
+            transferType: data.transferType,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            phone: data.phone,
+            email: data.email,
+            pharmacyName: data.pharmacyName,
+            pharmacyPhone: data.pharmacyPhone,
+            zipCode: data.zipCode,
+            rxNumber: data.rxNumber
+        };
 
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-        window.open(whatsappUrl, '_blank');
+        try {
+            const webhookUrl = import.meta.env.VITE_MAKE_WEBHOOK_URL;
+            if (webhookUrl && webhookUrl !== "https://hook.us1.make.com/your-webhook-url-here") {
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+            } else {
+                console.warn("Make.com Webhook URL is not configured. Form data:", payload);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
 
-        setIsSuccess(true);
-        reset();
-        setTimeout(() => setIsSuccess(false), 3000);
+            setIsSuccess(true);
+            reset();
+            setTimeout(() => setIsSuccess(false), 3000);
+        } catch (error) {
+            console.error("Error submitting transfer form:", error);
+            alert("There was an error submitting your request. Please try again.");
+        }
     };
 
     return (
