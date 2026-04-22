@@ -22,7 +22,7 @@ const Hero = () => {
     return (
         <div className="relative bg-white overflow-hidden pt-20 lg:pt-20">
             <div className="max-w-7xl mx-auto">
-                <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-40 xl:pb-48">
                     <svg
                         className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
                         fill="currentColor"
@@ -33,7 +33,7 @@ const Hero = () => {
                         <polygon points="50,0 100,0 50,100 0,100" />
                     </svg>
 
-                    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 md:pt-8">
+                    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 md:pt-8 lg:pt-12">
                         <div className="sm:text-center lg:text-left">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
                                 <span className="block xl:inline">Personalized Medicine</span>{' '}
@@ -44,20 +44,7 @@ const Hero = () => {
                             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 leading-relaxed font-light">
                                 We specialize in custom compounding solutions for patients and prescribers. Experience the difference of premium medication made just for your unique body.
                             </p>
-                            <div className="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4 space-y-4 sm:space-y-0">
-                                <Link
-                                    to="/patients"
-                                    className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-primary to-primary-dark hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 md:py-4 md:text-lg md:px-10"
-                                >
-                                    Get Your Services
-                                </Link>
-                                <Link
-                                    to="/services"
-                                    className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 border-2 border-primary/20 text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300 md:py-4 md:text-lg md:px-10"
-                                >
-                                    Learn More <ArrowRight className="ml-2 h-5 w-5" />
-                                </Link>
-                            </div>
+
 
                            
                         </div>
@@ -65,7 +52,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className="lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:w-1/2 bg-gray-100">
-                <div className="relative w-full h-56 sm:h-72 md:h-96 lg:h-full">
+                <div className="relative w-full h-72 sm:h-80 md:h-[32rem] lg:h-full overflow-hidden">
                     <AnimatePresence>
                         <motion.img
                             key={currentImage}
@@ -73,7 +60,7 @@ const Hero = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
-                            className="absolute inset-0 h-full w-full object-cover"
+                            className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
                             src={heroImages[currentImage]}
                             alt="Happy family benefiting from customized compounding pharmacy wellness solutions"
                         />

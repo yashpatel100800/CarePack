@@ -2,6 +2,11 @@ import { Heart, Activity, User, Dog, Stethoscope, Dumbbell } from 'lucide-react'
 
 const services = [
     {
+        title: 'Gastroenterology/Proctology',
+        description: 'Specialized formulations for hemorrhoids, anal fissures, and GI-related inflammatory conditions.',
+        icon: Stethoscope,
+    },
+    {
         title: 'Hormone Replacement',
         description: 'Customized BHRT solutions for men and women to restore balance and vitality.',
         icon: Heart,
@@ -20,11 +25,6 @@ const services = [
         title: 'Veterinary',
         description: 'Custom medications for pets, including flavored chews and transdermal gels.',
         icon: Dog,
-    },
-    {
-        title: 'Gastroenterology/Proctology',
-        description: 'Specialized formulations for hemorrhoids, anal fissures, and GI-related inflammatory conditions.',
-        icon: Stethoscope,
     },
     {
         title: 'Sports Medicine',
