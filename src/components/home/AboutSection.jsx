@@ -26,9 +26,9 @@ const AboutSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
                     <div className="relative">
-                        <h3 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">
-                            Why Choose Carepack?
-                        </h3>
+                        <div className="text-3xl font-extrabold tracking-tight sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 py-5">
+                            Why Choose Carepack ?
+                        </div>
                         <p className="mt-4 text-lg text-gray-500 leading-relaxed">
                             Mass-produced medications don't work for everyone. Standard retail pharmacies dispense generalized therapies, but true healing often requires a tailored approach. Expert compounding bridges that gap.
                         </p>

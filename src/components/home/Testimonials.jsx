@@ -54,7 +54,7 @@ const Testimonials = () => {
                                 ))}
                             </div>
                         </div>
-                        <h2 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark sm:text-5xl">
+                        <h2 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark sm:text-5xl py-2">
                             Trusted by the Community
                         </h2>
                         <div className="flex items-center mt-4">
