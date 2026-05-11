@@ -6,6 +6,7 @@ import Hero from '../components/home/Hero';
 import ServicesGrid from '../components/home/ServicesGrid';
 import AboutSection from '../components/home/AboutSection';
 import Testimonials from '../components/home/Testimonials';
+import CustomerSaying from '../components/home/CustomerSaying';
 import TransferForm from '../components/forms/TransferForm';
 
 const Home = () => {
@@ -58,6 +59,7 @@ const Home = () => {
             <ServicesGrid />
             <AboutSection />
             <Testimonials />
+            {/* <CustomerSaying /> */}
         </div>
     );
 };
